@@ -10,36 +10,32 @@ public class Money {
         if (money < 0) {
             return  -1;
         }
-
-        if (destino != TipoMoneda.EUR || destino != TipoMoneda.USD ||destino != TipoMoneda.GBP) {
+        if (origen == TipoMoneda.PTS || destino == TipoMoneda.PTS) {
             return -1;
         }
 
-        if (origen == TipoMoneda.EUR || origen == TipoMoneda.USD ||origen == TipoMoneda.GBP) {
-            if (origen == TipoMoneda.EUR){
-                if (destino == TipoMoneda.USD) {
-                     money = money * EUR_USD;
-                } else if (destino == TipoMoneda.GBP) {
-                    money = money * EUR_GBP;
-                }
-            }else if (origen == TipoMoneda.USD) {
-                if (destino == TipoMoneda.EUR) {
-                    money = money * USD_EUR;
-                } else if (destino == TipoMoneda.GBP) {
-                    money = money * USD_EUR;
-                    money = money * EUR_GBP;
-                }
-            }else {
-                if (destino == TipoMoneda.EUR) {
-                    money = money * GBP_EUR;
-                } else if (destino == TipoMoneda.USD) {
-                    money = money * GBP_EUR;
-                    money = money * EUR_USD;
-                }
+        if (origen == TipoMoneda.EUR){
+            if (destino == TipoMoneda.USD) {
+                 money = money * EUR_USD;
+            } else if (destino == TipoMoneda.GBP) {
+                money = money * EUR_GBP;
+            }
+        }else if (origen == TipoMoneda.USD) {
+            if (destino == TipoMoneda.EUR) {
+                money = money * USD_EUR;
+            } else if (destino == TipoMoneda.GBP) {
+                money = money * USD_EUR;
+                money = money * EUR_GBP;
             }
         }else {
-            return -1;
+            if (destino == TipoMoneda.EUR) {
+                money = money * GBP_EUR;
+            } else if (destino == TipoMoneda.USD) {
+                money = money * GBP_EUR;
+                money = money * EUR_USD;
+            }
         }
+
         return money;
     }
 }
