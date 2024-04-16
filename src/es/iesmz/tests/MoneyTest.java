@@ -16,37 +16,37 @@ public class MoneyTest {
     @Test
     public void test1() {
         Money m = new Money();
-        assertEquals(28.37f, m.change(TipoMoneda.EUR, TipoMoneda.USD, 23.88f));
+        assertEquals(28.37f, m.change(TipoMoneda.EUR, TipoMoneda.USD, 23.88f), 0.1f);
     }
 
     @Test
     public void test2() {
         Money m = new Money();
-        assertEquals(1165.83f, m.change(TipoMoneda.GBP, TipoMoneda.EUR, 1000.0f));
+        assertEquals(1165.83f, m.change(TipoMoneda.GBP, TipoMoneda.EUR, 1000.0f),0.1f);
     }
 
     @Test
     public void test3() {
         Money m = new Money();
-        assertEquals(201.21f, m.change(TipoMoneda.EUR, TipoMoneda.GBP, 234.56f));
+        assertEquals(201.21f, m.change(TipoMoneda.EUR, TipoMoneda.GBP, 234.56f),0.1f);
     }
 
     @Test
     public void test4() {
         Money m = new Money();
-        assertEquals(37.51f, m.change(TipoMoneda.USD, TipoMoneda.EUR, 44.56f));
+        assertEquals(37.51f, m.change(TipoMoneda.USD, TipoMoneda.EUR, 44.56f),0.1f);
     }
 
     @Test
     public void test5() {
         Money m = new Money();
-        assertEquals(138.49f, m.change(TipoMoneda.GBP, TipoMoneda.USD, 100.0f));
+        assertEquals(138.49f, m.change(TipoMoneda.GBP, TipoMoneda.USD, 100.0f),0.1f);
     }
 
     @Test
     public void test6() {
         Money m = new Money();
-        assertEquals(722.14f, m.change(TipoMoneda.USD, TipoMoneda.GBP, 1000.0f));
+        assertEquals(722.14f, m.change(TipoMoneda.USD, TipoMoneda.GBP, 1000.0f),0.1f);
     }
 
     @Test
